@@ -120,10 +120,13 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </p>
             <div class="example-live">
               <ex-hello></ex-hello>
+              <br />
+              <my-hello-with-custom-name></my-hello-with-custom-name>
             </div>
             <pre class="example-markup">
               <code class="language-markup">
   &lt;ex-hello&gt;&lt;/ex-hello&gt;
+  &lt;my-hello-with-custom-name&gt;&lt;/my-hello-with-custom-name&gt;
               </code>
             </pre>
             <pre class="example-cljs">
@@ -133,6 +136,9 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
     :content "Hello World!")
 
   (register ex-hello)
+
+  ;; Name can be explicitely provided.
+  (register (merge ex-hello {:name "my-hello-with-custom-name"}))
               </code>
             </pre>
 

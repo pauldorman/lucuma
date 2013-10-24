@@ -19084,6 +19084,7 @@ lucuma.examples.ex_extend = cljs.core.merge.call(null, cljs.core.PersistentArray
 goog.exportSymbol("lucuma.examples.ex_extend", lucuma.examples.ex_extend);
 lucuma.examples.register_all = function() {
   lucuma.register.call(null, lucuma.examples.ex_hello);
+  lucuma.register.call(null, cljs.core.merge.call(null, lucuma.examples.ex_hello, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "name", "name", 1017277949), "my-hello-with-custom-name"], !0)));
   lucuma.register.call(null, lucuma.examples.ex_lifecycle);
   lucuma.register.call(null, lucuma.examples.ex_content_template);
   lucuma.register.call(null, lucuma.examples.ex_content_hiccup);
