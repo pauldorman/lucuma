@@ -8,7 +8,7 @@
     <meta itemprop="image" content="https://1.gravatar.com/avatar/2674ec9e762bcd011c9542c1b787ce13">
     <meta itemprop="url" content="https://github.com/jeluard">
     <title>Lucuma - A Web Components library for ClojureScript</title>
-    <script src="assets/platform.min.js"></script>
+    <script src="assets/platform-v0.0.20131025.min.js"></script>
     <script src="assets/spin.min.js"></script>
     <script src="assets/ladda.min.js"></script>
     <script src="assets/lucuma+examples.js"></script>
@@ -524,13 +524,12 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             <script>
               var el = document.getElementById('lucu-range-with-threshold');
               var valueEl = document.getElementById('lucu-range-with-threshold-value');
-              valueEl = valueEl.impl != null ? valueEl.impl : valueEl;
               valueEl.innerHTML = el.value;
               el.addEventListener('threshold-cross', function(evt) {
                 valueEl.style.color = (evt.detail.type === "breached") ? "red" : "green";
               }, false);
               el.addEventListener('change', function(evt) {
-                var evt = evt.impl != null ? evt.impl : evt;
+                  var evt = evt.impl != null ? evt.impl : evt;
                 valueEl.innerHTML = evt.target.value;
               }, false);
             </script>
@@ -542,7 +541,6 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
   &lt;script&gt;
     var el = document.getElementById('lucu-range-with-threshold');
     var valueEl = document.getElementById('lucu-range-with-threshold-value');
-    valueEl = valueEl.impl != null ? valueEl.impl : valueEl;
     valueEl.innerHTML = el.value;
     el.addEventListener('threshold-cross', function(evt) {
       valueEl.style.color = (evt.detail.type === "breached") ? "red" : "green";
