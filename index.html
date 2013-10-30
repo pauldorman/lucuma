@@ -66,7 +66,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </ul>
           </li>
           <li><a href="#tests">Tests</a></li>
-          <li><a href="#browser-support">Native browser support</a></li>
+          <li><a href="#browser-support">Browser support</a></li>
           <li><a href="#links">Links</a></li>
         </ul>
       </div>
@@ -103,14 +103,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
       <section id="installation" class="main-section">
         <h1>Installation</h1>
         <p>Lucuma is available in <a href="https://clojars.org/lucuma">Clojars</a>. Add <strong>[lucuma "0.1.0"]</strong> dependency to your <strong>project.clj</strong>.</p>
-        <div class="info">
-          <h4>Browser support</h4>
-          <p>Unless you target browsers with <a href="#browser-support">native</a> custom elements support you will need to use a polyfill.</p>
-          <p>
-            <a href="http://www.polymer-project.org/getting-the-code.html">Polymer</a> is one of the stronger alternative.
-            Use it by adding <code class="language-markup">&lt;script src="platform.min.js"&gt;&lt;/script&gt;</code> to your html head (check <a href="http://www.polymer-project.org/build/">build reports</a> for browser support).
-            </p>
-        </div>
+          <p>Depending on <a href="#browser-support">targeted browsers</a> polyfill usage might be needed.</p>
       </section>
 
       <section id="usage" class="main-section">
@@ -738,12 +731,14 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
       </section>
 
       <section id="browser-support" class="main-section">
-        <h1>Native browser support</h1>
+        <h1>Browser support</h1>
         <p>
           Browsers are implementing Web Components technologies furiously those days. Still you might have to enable their support manually.
           <br>
           Check browser progress on <a href="http://caniuse.com/shadowdom">Shadow DOM</a>.
         </p>
+
+        <h2 id="browser-support-native">Native browser support</h2>
         <ul class="nav nav-tabs">
           <li class="active"><a href="#chrome" data-toggle="tab">Chrome</a></li>
           <li><a href="#chrome-canary" data-toggle="tab">Chrome Canary</a></li>
@@ -788,6 +783,13 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </div>
           </div>
         </div>
+
+        <h2 id="browser-support-polyfill">Polyfill</h2>
+        <p>Unless you target browsers with <a href="#browser-support-native">native</a> custom elements support you will need to use a polyfill.</p>
+        <p>
+          <a href="http://www.polymer-project.org/getting-the-code.html">Polymer</a> is one of the stronger alternative.
+          Use it by adding <code class="language-markup">&lt;script src="platform.min.js"&gt;&lt;/script&gt;</code> to your html head (check <a href="http://www.polymer-project.org/build/">build reports</a> for browser support).
+        </p>
       </section>
 
       <section id="links" class="main-section">
