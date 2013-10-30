@@ -8,7 +8,7 @@
     <meta itemprop="image" content="https://1.gravatar.com/avatar/2674ec9e762bcd011c9542c1b787ce13">
     <meta itemprop="url" content="https://github.com/jeluard">
     <title>Lucuma - A Web Components library for ClojureScript</title>
-    <script src="assets/platform-v0.0.20131025.min.js"></script>
+    <!--script src="assets/platform-v0.0.20131025.min.js"></script-->
     <script src="assets/spin.min.js"></script>
     <script src="assets/ladda.min.js"></script>
     <script src="assets/lucuma+examples.js"></script>
@@ -66,7 +66,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </ul>
           </li>
           <li><a href="#tests">Tests</a></li>
-          <li><a href="#native-browser-support">Native browser support</a></li>
+          <li><a href="#browser-support">Native browser support</a></li>
           <li><a href="#links">Links</a></li>
         </ul>
       </div>
@@ -77,7 +77,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
         <div class="lead">
           <p>A Web Components library for <a href="http://clojurescript.com">ClojureScript</a>.</p>
           <p>
-          Lucuma helps with creating reusable HTML elements (<a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Components</a>) encapsulating content, style and logic. It is <strong>not</strong> a fancy <em>MV*</em> framework and aims at being a thin layer building on top of next generation web standards (mainly <span class="text-muted">Custom Elements</span> and <span class="text-muted">Shadow DOM</span>).
+            Lucuma helps with creating reusable HTML elements (<a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Components</a>) encapsulating content, style and logic. It is <strong>not</strong> a fancy <em>MV*</em> framework and aims at being a thin layer building on top of next generation web standards (mainly <span class="text-muted">Custom Elements</span> and <span class="text-muted">Shadow DOM</span>).
             <br>
             It also makes the extra effort of being flexible and open to existing ClojureScript standards and libraries.</p>
           <p>
@@ -88,6 +88,16 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
           <h4>Disclaimer</h4>
           <p>Technologies involved are pre-alpha (specs are not frozen yet). Use cautiously!</p>
         </div>
+        <div id="support-warning" class="warning" style="display: none;">
+          <h4>Warning</h4>
+            <p>Your browser does not implement necessary Web Components technologies. The documentation won't be displayed correctly. Find more <a href="#browser-support">details</a> about which browsers support those.</p>
+        </div>
+        <script>
+          if (!lucuma.custom_elements.supported_QMARK_()
+              || !lucuma.shadow_dom.supported_QMARK_()) {
+            document.getElementById('support-warning').style.display = 'block';
+          }
+        </script>
       </section>
 
       <section id="installation" class="main-section">
@@ -95,7 +105,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
         <p>Lucuma is available in <a href="https://clojars.org/lucuma">Clojars</a>. Add <strong>[lucuma "0.1.0"]</strong> dependency to your <strong>project.clj</strong>.</p>
         <div class="info">
           <h4>Browser support</h4>
-          <p>Unless you target browsers with <a href="#native-browser-support">native</a> custom elements support you will need to use a polyfill.</p>
+          <p>Unless you target browsers with <a href="#browser-support">native</a> custom elements support you will need to use a polyfill.</p>
           <p>
             <a href="http://www.polymer-project.org/getting-the-code.html">Polymer</a> is one of the stronger alternative.
             Use it by adding <code class="language-markup">&lt;script src="platform.min.js"&gt;&lt;/script&gt;</code> to your html head (check <a href="http://www.polymer-project.org/build/">build reports</a> for browser support).
@@ -524,12 +534,11 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             <script>
               var el = document.getElementById('lucu-range-with-threshold');
               var valueEl = document.getElementById('lucu-range-with-threshold-value');
-              valueEl.innerHTML = el.value;
-              el.addEventListener('threshold-cross', function(evt) {
+                valueEl.innerHTML = el.value;
+                el.addEventListener('threshold-cross', function(evt) {
                 valueEl.style.color = (evt.detail.type === "breached") ? "red" : "green";
               }, false);
               el.addEventListener('change', function(evt) {
-                  var evt = evt.impl != null ? evt.impl : evt;
                 valueEl.innerHTML = evt.target.value;
               }, false);
             </script>
@@ -546,7 +555,6 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
       valueEl.style.color = (evt.detail.type === "breached") ? "red" : "green";
     }, false);
     el.addEventListener('change', function(evt) {
-      var evt = evt.impl != null ? evt.impl : evt;
       valueEl.innerHTML = evt.target.value;
     }, false);
   &lt;/script&gt;
@@ -729,7 +737,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
         <div id="tests-results"></div>
       </section>
 
-      <section id="native-browser-support" class="main-section">
+      <section id="browser-support" class="main-section">
         <h1>Native browser support</h1>
         <p>
           Browsers are implementing Web Components technologies furiously those days. Still you might have to enable their support manually.
