@@ -213,7 +213,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </ol>
             <p>
             <p>
-              <strong>render-content</strong> has implementations for String (identity) and <a href="#custom-element-template-support">HTML Template</a>.
+              <strong>render-content</strong> has implementations for String (identity) and <a href="#custom-element-content-template-support">HTML Template</a>.
               <br>
               <strong>append-content!</strong> has implementations for String (set as <strong>innerHTML</strong>), any <strong>HTMLElement</strong> and <strong>DocumentFragment</strong> (both appended to the ShadowRoot).
             </p>
@@ -276,7 +276,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
 
           <section id="custom-element-style">
             <h2>Style</h2>
-            <p>Style is treated similarly to <a href="custom-element-content">content</a>.
+            <p>Style is treated similarly to <a href="#custom-element-content">content</a>.
             <p>The rendering process consists of:</p>
             <ol>
               <li>if style is a function evaluate it; otherwise use style value as-is</li>
