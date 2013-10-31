@@ -346,7 +346,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </p>
             <div class="example-live">
               <ex-attributes id="ex-attributes"></ex-attributes>
-              <button onclick="toggle()">Toggle attribute</button>
+              <button type="button" class="btn btn-primary" onclick="toggle()">Toggle attribute</button>
               <script>
                 function toggle() {
                   var el = document.getElementById('ex-attributes');
@@ -373,7 +373,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
             </p>
             <div class="example-live">
               <ex-methods id="ex-methods"></ex-methods>
-              <button onclick="document.getElementById('ex-methods').method()">Call alert</button>
+              <button type="button" class="btn btn-primary" onclick="document.getElementById('ex-methods').method()">Call alert</button>
             </div>
             <pre class="example-markup">
               <code class="language-markup">
@@ -567,7 +567,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"><
               <h4>Title</h4>
               <div>Some content</div>
             </lucu-overlay>
-            <button onclick="document.getElementById('overlay').show()">Show overlay</button>
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('overlay').show()">Show overlay</button>
           </div>
           <pre class="example-markup">
             <code class="language-markup">
